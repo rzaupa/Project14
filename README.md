@@ -6,5 +6,4 @@ Gruppo 14 del corso Ingegneria del Software dell'Università di Padova.
 
 
 ## DOCUMENTI ESTERNI 
-- verbale del 26 da inserire
-[27 Ottobre 2023](https://docs.google.com/document/d/1I8d31uvKAgfRBE6tZTuv4-6u204gGUlxTH-grn0Z800/edit?usp=sharing)
+- [27 Ottobre 2023](https://docs.google.com/document/d/1I8d31uvKAgfRBE6tZTuv4-6u204gGUlxTH-grn0Z800/edit?usp=sharing)
