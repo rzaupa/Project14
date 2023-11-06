@@ -6,7 +6,14 @@
 
 ## VERBALI
 
-### INTERNI  
+### INTERNI
+[26 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_1.pdf)
+
+[27 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_2.pdf)
+
+[29 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_3.pdf)
+
+[30 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_4.pdf)
 
 ### ESTERNI  
 
