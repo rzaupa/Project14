@@ -1,6 +1,6 @@
 # CANDIDATURA
 
-[Lettera di presentazione](https://github.com/RAMtastic6/Project14/blob/main/documenti/candidatura.pdf) <br>
+[Lettera di presentazione](https://github.com/RAMtastic6/Project14/blob/main/documenti/lettera_di_presentazione_v1.0.pdf) <br>
 [Preventivo costi e assunzione impegni](https://github.com/RAMtastic6/Project14/tree/main/documenti/documento_impegni.pdf) <br>
 [Documento di valutazione dei capitolati]() <br>
 
