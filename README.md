@@ -15,7 +15,7 @@
 
 [30 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_4.pdf)
 
-[30 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_interno_06_11.pdf)
+[06 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_INTERNI/verbale_interno_06_11.pdf)
 
 ### ESTERNI  
 [27 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/VERBALI_ESTERNI/verbale_esterno_27_10.pdf)
