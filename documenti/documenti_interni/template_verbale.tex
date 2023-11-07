@@ -1,5 +1,5 @@
 \documentclass[12pt, oneside]{article} 
-\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphicx, geometry}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphicx, geometry, fancyhdr}
 \usepackage[italian]{babel}
 
 \geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
@@ -7,8 +7,16 @@
 
 \author{RAMtastic6}
 
+%Intestazione
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Gruppo 14 RAMtastic6\\ramtastic6@gmail.com}
+\fancyfoot[C]{\thepage}
+
 % Intestazione documento
 \begin{document}
+% Salta la prima pagina per l'intestazione
+\thispagestyle{empty}
 \title{Riunione di team}
 \date{18 novembre 2023} % cambiare la data del verbale in questo slot
 
@@ -16,15 +24,26 @@
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{logo.png}
-	\caption{email: ramtastic6@gmail.com}
 	\label{}
 \end{figure}
+\begin{center}
+	email: ramtastic6@gmail.com
+\end{center}
+
+% Informazioni sul documento
+\section*{Informazioni sul documento}
+\begin{tabular}{ll}
+	Versione: & 1.0 \\
+	Redattori: & nome c. \\
+	Verificatori: & nome c. 
+\end{tabular}
+\newpage
 
 % Sommario
 \tableofcontents
 \newpage
 
-% Paragrafo
+% Contenuto
 \section{Partecipanti}
 
 \begin{center}
