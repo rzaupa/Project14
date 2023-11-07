@@ -18,5 +18,7 @@
 
 [06 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/CANDIDATURA/verbali/verbali_interni/verbale_06_11.pdf)
 
+[07 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/CANDIDATURA/verbali/verbali_interni/verbale_07_11.pdf)
+
 ### ESTERNI  
 [27 ottobre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/CANDIDATURA/verbali/verbali_esterni/verbale_27_10.pdf)
