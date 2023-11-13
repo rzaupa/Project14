@@ -26,4 +26,10 @@
 
 ## RTB
 
-12 novembre 2023
+### VERBALI
+
+#### INTERNI
+[12 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/RTB/verbali/verbale_12_11.pdf)
+
+
+#### ESTERNI 
