@@ -29,7 +29,8 @@
 ### VERBALI
 
 #### INTERNI
-[12 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/RTB/verbali/verbale_12_11.pdf)
-
+[12 novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/RTB/verbali/verbali_interni/verbale_12_11.pdf)
+[13 Novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/RTB/verbali/verbali_interni/verbale_13_11.pdf)
+[14 Novembre 2023](https://github.com/RAMtastic6/Project14/blob/main/documenti/RTB/verbali/verbali_interni/verbale_14_11.pdf)
 
 #### ESTERNI 
