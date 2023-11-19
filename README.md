@@ -3,8 +3,8 @@
 <h2>CANDIDATURA</h2>
 
 [Lettera di presentazione](documenti/CANDIDATURA/lettera_presentazione_v1.0.pdf) (V1.0)<br>
-[Preventivo costi e assunzione impegni](documenti/CANDIDATURA/valutazione_capitolati_v1.1.pdf) (V1.1) <br>
-[Documento di valutazione dei capitolati](documenti/CANDIDATURA/documento_impegni_v1.2.pdf) (V1.2) <br>
+[Preventivo costi e assunzione impegni](documenti/CANDIDATURA/documento_impegni_v1.2.pdf) (V1.2) <br>
+[Documento di valutazione dei capitolati](documenti/CANDIDATURA/valutazione_capitolati_v1.1.pdf) (V1.1) <br>
 
 <details>
   <summary>VERBALI</summary>
