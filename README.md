@@ -1,42 +1,49 @@
-# DOCUMENTI
+<h1>DOCUMENTI</h1>
 
-## CANDIDATURA
+<h2>CANDIDATURA</h2>
 
-[Lettera di presentazione (V1.0)](documenti/CANDIDATURA/lettera_presentazione_v1.0.pdf) <br>
-[Preventivo costi e assunzione impegni (V1.1)](documenti/CANDIDATURA/valutazione_capitolati_v1.1.pdf) <br>
-[Documento di valutazione dei capitolati (V1.2)](documenti/CANDIDATURA/documento_impegni_v1.2.pdf) <br>
+[Lettera di presentazione](documenti/CANDIDATURA/lettera_presentazione_v1.0.pdf) (V1.0)<br>
+[Preventivo costi e assunzione impegni](documenti/CANDIDATURA/valutazione_capitolati_v1.1.pdf) (V1.1) <br>
+[Documento di valutazione dei capitolati](documenti/CANDIDATURA/documento_impegni_v1.2.pdf) (V1.2) <br>
 
-### VERBALI
+<details>
+  <summary>VERBALI</summary>
 
-#### INTERNI
-[26 ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_26_10.pdf)
+  <details>
+    <summary>Interni</summary>
 
-[27 ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_27_10.pdf)
+  - [26 Ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_26_10.pdf)
+  - [27 Ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_27_10.pdf)
+  - [29 Ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_29_10.pdf)
+  - [30 Ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_30_10.pdf)
+  - [06 Novembre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_06_11.pdf)
+  - [07 Novembre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_07_11.pdf)
+  </details>
 
-[29 ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_29_10.pdf)
+  <details>
+    <summary>Esterni</summary>
 
-[30 ottobre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_30_10.pdf)
+  - [27 Ottobre 2023](documenti/CANDIDATURA/verbali/verbali_esterni/verbale_27_10.pdf)
+  </details>
+</details>
 
-[06 novembre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_06_11.pdf)
+<h2>RTB</h2>
 
-[07 novembre 2023](documenti/CANDIDATURA/verbali/verbali_interni/verbale_07_11.pdf)
+[Norme di Progetto](documenti/RTB/norme_progetto_v0.3.0.pdf) (V0.3.0)
 
-#### ESTERNI  
-[27 ottobre 2023](documenti/CANDIDATURA/verbali/verbali_esterni/verbale_27_10.pdf)
+<details open>
+  <summary>VERBALI</summary>
 
-## RTB
+  <details open>
+    <summary>Interni</summary>
 
-[Norme di Progetto (V0.3.0)](documenti/RTB/norme_progetto_v0.3.0.pdf)
+  - [12 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_12_11.pdf)
+  - [13 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_13_11.pdf)
+  - [14 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_14_11.pdf)
+  - [18 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_18_11.pdf)
+  </details>
 
-### VERBALI
-
-#### INTERNI
-[12 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_12_11.pdf)
-
-[13 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_13_11.pdf)
-
-[14 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_14_11.pdf)
-
-[18 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_18_11.pdf)
-
-#### ESTERNI 
+  <details open>
+    <summary>Esterni</summary>
+  </details>
+</details>
