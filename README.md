@@ -50,5 +50,6 @@
     <summary>Esterni</summary>
     
   - [24 Novembre 2023](documenti/RTB/verbali/verbali_esterni/verbale_24_11.pdf)
+  - [6 Dicembre 2023](documenti/RTB/verbali/verbali_esterni/verbale_06_12.pdf)
   </details>
 </details>
