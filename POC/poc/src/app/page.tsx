@@ -1,5 +1,7 @@
+import  Greet from "@/app/ui/example_component"
+
 export default function Home() {
   return (
-    <h1> CIAO MONDO </h1> 
+    <Greet/>
   )
 }
