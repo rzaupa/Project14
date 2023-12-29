@@ -45,6 +45,9 @@
   - [27 Novembre 2023](documenti/RTB/verbali/verbali_interni/verbale_27_11.pdf)
   - [1 Dicembre 2023](documenti/RTB/verbali/verbali_interni/verbale_01_12.pdf)
   - [4 Dicembre 2023](documenti/RTB/verbali/verbali_interni/verbale_04_12.pdf)
+  - [13 Dicembre 2023](documenti/RTB/verbali/verbali_interni/verbale_13_12.pdf)
+  - [18 Dicembre 2023](documenti/RTB/verbali/verbali_interni/verbale_18_12.pdf)
+  - [12 Dicembre 2023](documenti/RTB/verbali/verbali_interni/verbale_12_27.pdf)
   </details>
 
   <details open>
