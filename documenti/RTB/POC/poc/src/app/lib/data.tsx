@@ -120,10 +120,14 @@ export function getCities(): string[] {
 export function getFilteredRestaurants(query: { date: string | null; time: string | null; city: string | null; cuisine: string | null; }): Restaurant[] {
     const restaurants = getRestaurants();
     return restaurants.filter((restaurant) => {
-        if (query.date && query.time) {
-            const order = restaurant.daysopen.includes(getDayOfWeek(new Date(query.date))) && restaurant.hours.includes(query.time);
-            console.log(getDayOfWeek(new Date(query.date)));
-            if (!order) {
+        if (query.date) {
+            const dayOfWeek = getDayOfWeek(new Date(query.date));
+            if (!restaurant.daysopen.includes(dayOfWeek)) {
+                return false;
+            }
+        }
+        if(query.time) {
+            if (!restaurant.hours.includes(query.time)) {
                 return false;
             }
         }

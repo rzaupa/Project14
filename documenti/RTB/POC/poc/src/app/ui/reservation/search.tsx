@@ -19,7 +19,7 @@ export default function Search() {
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="border border-gray-300 p-2 w-full mb-2"
+                    className="border border-gray-300 p-2 w-full mb-2"                    
                 />
                 <input
                     type="time"
