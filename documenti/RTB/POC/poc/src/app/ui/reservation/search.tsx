@@ -1,9 +1,36 @@
 'use client';
 import React, { useState } from 'react';
-import { getCities, getCuisines, getFilteredRestaurants } from '@/app/lib/data';
-import { Restaurant } from '@/app/lib/definitions';
+import { getCities, getCuisines } from '@/app/lib/data';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 export default function Search() {
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const { replace } = useRouter();
+    function handleSearch(date: string, time: string, city: string, cuisine: string) {
+        const params = new URLSearchParams(searchParams);
+        if (date) {
+            params.set('date', date);
+        } else {
+            params.delete('date');
+        }
+        if (time) {
+            params.set('time', time);
+        } else {
+            params.delete('time');
+        }
+        if (city) {
+            params.set('city', city);
+        } else {
+            params.delete('city');
+        }
+        if (cuisine) {
+            params.set('cuisine', cuisine);
+        } else {
+            params.delete('cuisine');
+        }
+        replace(`${pathname}?${params.toString()}`);
+    }
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [city, setCity] = useState('');
@@ -18,22 +45,34 @@ export default function Search() {
                 <input
                     type="date"
                     value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    className="border border-gray-300 p-2 w-full mb-2"                    
+                    onChange={(e) => {
+                        setDate(e.target.value);
+                        handleSearch(e.target.value, time, city, cuisine);
+                    }}
+                    className="border border-gray-300 p-2 w-full mb-2"
+                    defaultValue={searchParams.get('date')?.toString()}
                 />
                 <input
                     type="time"
                     value={time}
-                    onChange={(e) => setTime(e.target.value)}
+                    onChange={(e) => {
+                        setTime(e.target.value);
+                        handleSearch(date, e.target.value, city, cuisine);
+                    }}
                     className="border border-gray-300 p-2 w-full mb-2"
+                    defaultValue={searchParams.get('time')?.toString()}
                 />
                 <input
                     type="text"
                     value={city}
-                    onChange={(e) => setCity(e.target.value)}
+                    onChange={(e) => {
+                        setCity(e.target.value);
+                        handleSearch(date, time, e.target.value, cuisine);
+                    }}
                     placeholder="Città"
                     className="border border-gray-300 p-2 w-full mb-2"
                     list="citySuggestions"
+                    defaultValue={searchParams.get('city')?.toString()}
                 />
                 <datalist id="citySuggestions">
                     {cities.map((city) => (
@@ -42,8 +81,12 @@ export default function Search() {
                 </datalist>
                 <select
                     value={cuisine}
-                    onChange={(e) => setCuisine(e.target.value)}
+                    onChange={(e) => {
+                        setCuisine(e.target.value);
+                        handleSearch(date, time, city, e.target.value);
+                    }}
                     className="border border-gray-300 p-2 w-full mb-2"
+                    defaultValue={searchParams.get('cuisine')?.toString()}
                 >
                     <option value="">Seleziona la tipologia di cucina</option>
                     {cuisines.map((cuisine) => (
@@ -56,41 +99,13 @@ export default function Search() {
                         setTime('');
                         setCity('');
                         setCuisine('');
+                        handleSearch('', '', '', '');
                     }}
                     className="bg-blue-500 text-white py-2 px-4 rounded-md"
                 >
                     Reset
                 </button>
             </form>
-            <RestaurantTable restaurants={getFilteredRestaurants({ date, time, city, cuisine })} />
-        </div>
-    );
-}
-
-export function RestaurantTable({restaurants}: {restaurants: Restaurant[]}) {
-    
-    return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Indirizzo</th>
-                        <th>Città</th>
-                        <th>Cucina</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {restaurants.map((restaurant) => (
-                        <tr key={restaurant.id}>
-                            <td>{restaurant.name}</td>
-                            <td>{restaurant.address}</td>
-                            <td>{restaurant.city}</td>
-                            <td>{restaurant.cuisine}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </div>
     );
 }
