@@ -4,13 +4,11 @@ import Table from '@/app/ui/reservation/table';
 
 export default function Page(
     {
-        searchParams,
+        query,
     }: {
-        searchParams?: {
-            query?: string;
-        };
+        query: string;
     }) {
-    const query = searchParams?.query || '';
+    console.log('ok');
     return (
         <div>
             <div>

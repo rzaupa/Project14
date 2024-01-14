@@ -1,9 +1,7 @@
-import { Restaurant } from '@/app/lib/definitions';
 import { getFilteredRestaurants } from '@/app/lib/data';
 
 export default function RestaurantsTable({ query }: { query: string }) {
-    /*const restaurants = getFilteredRestaurants();*/
-    console.log('ok');
+    const restaurants = getFilteredRestaurants(query);
 
     return (
         <div>

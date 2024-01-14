@@ -50,7 +50,6 @@ export default function Search() {
                         handleSearch(e.target.value, time, city, cuisine);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
-                    defaultValue={searchParams.get('date')?.toString()}
                 />
                 <input
                     type="time"
@@ -60,7 +59,6 @@ export default function Search() {
                         handleSearch(date, e.target.value, city, cuisine);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
-                    defaultValue={searchParams.get('time')?.toString()}
                 />
                 <input
                     type="text"
@@ -72,7 +70,6 @@ export default function Search() {
                     placeholder="Città"
                     className="border border-gray-300 p-2 w-full mb-2"
                     list="citySuggestions"
-                    defaultValue={searchParams.get('city')?.toString()}
                 />
                 <datalist id="citySuggestions">
                     {cities.map((city) => (
@@ -86,7 +83,6 @@ export default function Search() {
                         handleSearch(date, time, city, e.target.value);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
-                    defaultValue={searchParams.get('cuisine')?.toString()}
                 >
                     <option value="">Seleziona la tipologia di cucina</option>
                     {cuisines.map((cuisine) => (
