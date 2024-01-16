@@ -3,12 +3,7 @@ import React, { use } from 'react';
 import Search from '@/app/ui/reservation/search';
 import Table from '@/app/ui/reservation/table';
 
-export default function Page(
-    {
-        parms,
-    }: {
-        parms: string;
-    }) {
+export default function Page() {
     return (
         <div>
             <div>
