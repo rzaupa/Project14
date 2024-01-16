@@ -2,11 +2,14 @@ import { getFilteredRestaurants } from '@/app/lib/data';
 import { useSearchParams } from 'next/navigation';
 
 
-export default function RestaurantsTable({ parms }: { parms: string }) {
+export default function RestaurantsTable() {
     const searchParams = useSearchParams();
-    const param = searchParams.get('city');
-    console.log(param);
-    /*const restaurants = getFilteredRestaurants(parms);*/
+    const date = searchParams.get('date');
+    const time = searchParams.get('time');
+    const city = searchParams.get('city');
+    const cuisine = searchParams.get('cuisine');
+    const parms = { date, time, city, cuisine };
+    const restaurants = getFilteredRestaurants(parms);
 
     return (
         <div>
@@ -20,14 +23,14 @@ export default function RestaurantsTable({ parms }: { parms: string }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {/*restaurants.map((restaurant) => (
+                    {restaurants.map((restaurant) => (
                         <tr key={restaurant.id}>
                             <td>{restaurant.name}</td>
                             <td>{restaurant.address}</td>
                             <td>{restaurant.city}</td>
                             <td>{restaurant.cuisine}</td>
                         </tr>
-                    ))}*/}
+                    ))}
                 </tbody>
             </table>
         </div>

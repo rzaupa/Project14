@@ -19,7 +19,7 @@ export default function Page(
                 <p>Seleziona data, ora di arrivo, città e tipologia di cucina per ricercare un ristorante</p>
                 <Search />
             </div>
-            <Table parms={parms} />
+            <Table />
         </div>
     );
 };
