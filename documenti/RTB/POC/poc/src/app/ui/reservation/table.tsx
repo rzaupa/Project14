@@ -1,7 +1,12 @@
 import { getFilteredRestaurants } from '@/app/lib/data';
+import { useSearchParams } from 'next/navigation';
 
-export default function RestaurantsTable({ query }: { query: string }) {
-    const restaurants = getFilteredRestaurants(query);
+
+export default function RestaurantsTable({ parms }: { parms: string }) {
+    const searchParams = useSearchParams();
+    const param = searchParams.get('city');
+    console.log(param);
+    /*const restaurants = getFilteredRestaurants(parms);*/
 
     return (
         <div>

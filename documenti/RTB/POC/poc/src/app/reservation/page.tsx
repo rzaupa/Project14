@@ -1,14 +1,14 @@
-import React from 'react';
+'use client';
+import React, { use } from 'react';
 import Search from '@/app/ui/reservation/search';
 import Table from '@/app/ui/reservation/table';
 
 export default function Page(
     {
-        query,
+        parms,
     }: {
-        query: string;
+        parms: string;
     }) {
-    console.log('ok');
     return (
         <div>
             <div>
@@ -19,7 +19,7 @@ export default function Page(
                 <p>Seleziona data, ora di arrivo, città e tipologia di cucina per ricercare un ristorante</p>
                 <Search />
             </div>
-            <Table query={query} />
+            <Table parms={parms} />
         </div>
     );
 };
