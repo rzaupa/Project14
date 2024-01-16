@@ -117,7 +117,7 @@ export function getCities(): string[] {
     return Array.from(new Set(restaurants.map((restaurant) => restaurant.city)));
 }
 
-export function getFilteredRestaurants(query: { date: string | null; time: string | null; city: string | null; cuisine: string | null; }): Restaurant[] {
+export function getFilteredRestaurants(query: { date: string | null; nameRestaurant: string | null; city: string | null; cuisine: string | null; }): Restaurant[] {
     const restaurants = getRestaurants();
     return restaurants.filter((restaurant) => {
         if (query.date) {
@@ -126,10 +126,8 @@ export function getFilteredRestaurants(query: { date: string | null; time: strin
                 return false;
             }
         }
-        if(query.time) {
-            if (!restaurant.hours.includes(query.time)) {
-                return false;
-            }
+        if(query.nameRestaurant && !restaurant.name.includes(query.nameRestaurant)) {
+            return false;
         }
         if (query.city && restaurant.city !== query.city) {
             return false;

@@ -2,22 +2,24 @@
 import React, { useState } from 'react';
 import { getCities, getCuisines } from '@/app/lib/data';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { set } from 'firebase/database';
 
 export default function Search() {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
-    function handleSearch(date: string, time: string, city: string, cuisine: string) {
+    function handleSearch(nameRestaurant: string, date: string, city: string, cuisine: string) {
         const params = new URLSearchParams(searchParams);
         if (date) {
             params.set('date', date);
         } else {
             params.delete('date');
         }
-        if (time) {
-            params.set('time', time);
-        } else {
-            params.delete('time');
+        if (nameRestaurant) {
+            params.set('nameRestaurant', nameRestaurant);
+        }
+        else {
+            params.delete('nameRestaurant');
         }
         if (city) {
             params.set('city', city);
@@ -32,7 +34,7 @@ export default function Search() {
         replace(`${pathname}?${params.toString()}`);
     }
     const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
+    const [nameRestaurant, setNameRestaurant] = useState('');
     const [city, setCity] = useState('');
     const [cuisine, setCuisine] = useState('');
 
@@ -43,20 +45,19 @@ export default function Search() {
         <div className="mb-4">
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
                 <input
+                    className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+                    placeholder={'Nome ristorante'}
+                    onChange={(e) => {
+                        setNameRestaurant(e.target.value);
+                        handleSearch(e.target.value, date, city, cuisine);
+                    }}
+                />
+                <input
                     type="date"
                     value={date}
                     onChange={(e) => {
                         setDate(e.target.value);
-                        handleSearch(e.target.value, time, city, cuisine);
-                    }}
-                    className="border border-gray-300 p-2 w-full mb-2"
-                />
-                <input
-                    type="time"
-                    value={time}
-                    onChange={(e) => {
-                        setTime(e.target.value);
-                        handleSearch(date, e.target.value, city, cuisine);
+                        handleSearch(nameRestaurant, e.target.value, city, cuisine);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
                 />
@@ -65,7 +66,7 @@ export default function Search() {
                     value={city}
                     onChange={(e) => {
                         setCity(e.target.value);
-                        handleSearch(date, time, e.target.value, cuisine);
+                        handleSearch(nameRestaurant, date, e.target.value, cuisine);
                     }}
                     placeholder="Città"
                     className="border border-gray-300 p-2 w-full mb-2"
@@ -80,7 +81,7 @@ export default function Search() {
                     value={cuisine}
                     onChange={(e) => {
                         setCuisine(e.target.value);
-                        handleSearch(date, time, city, e.target.value);
+                        handleSearch(nameRestaurant, date, city, e.target.value);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
                 >
@@ -91,8 +92,8 @@ export default function Search() {
                 </select>
                 <button
                     onClick={() => {
+                        setNameRestaurant('');
                         setDate('');
-                        setTime('');
                         setCity('');
                         setCuisine('');
                         handleSearch('', '', '', '');

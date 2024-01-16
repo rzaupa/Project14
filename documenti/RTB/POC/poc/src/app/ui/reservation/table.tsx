@@ -4,11 +4,11 @@ import { useSearchParams } from 'next/navigation';
 
 export default function RestaurantsTable() {
     const searchParams = useSearchParams();
+    const nameRestaurant = searchParams.get('nameRestaurant');
     const date = searchParams.get('date');
-    const time = searchParams.get('time');
     const city = searchParams.get('city');
     const cuisine = searchParams.get('cuisine');
-    const parms = { date, time, city, cuisine };
+    const parms = { date, nameRestaurant, city, cuisine };
     const restaurants = getFilteredRestaurants(parms);
 
     return (
