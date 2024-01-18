@@ -1,4 +1,4 @@
-import { getFilteredRestaurants } from '@/app/lib/data';
+import { fetchRestaurants, getFilteredRestaurants } from '@/app/lib/data';
 import { useSearchParams } from 'next/navigation';
 
 
@@ -10,6 +10,8 @@ export default function RestaurantsTable() {
     const cuisine = searchParams.get('cuisine');
     const parms = { date, nameRestaurant, city, cuisine };
     const restaurants = getFilteredRestaurants(parms);
+
+    console.log(fetchRestaurants());
 
     return (
         <div>

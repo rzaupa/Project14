@@ -24,19 +24,19 @@ services:
     image: postgres
     container_name: postgres-server
     restart: always
-    user: postgres
     volumes:
       - ./sql/easy_meal.sql:/docker-entrypoint-initdb.d/easy_meal.sql
     environment:
       POSTGRES_DB: easy_meal
-      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     healthcheck:
       test: [ "CMD", "pg_isready" ]
       interval: 10s
       timeout: 5s
       retries: 5
     ports:
-      - 5432
+      - "5432:5432"
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

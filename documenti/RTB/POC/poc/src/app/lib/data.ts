@@ -1,10 +1,31 @@
+import { Pool } from 'pg';
 import {
     Restaurant,
     Menu,
     Food,
     Order
 } from "@/app/lib/definitions";
+import { unstable_noStore as noStore } from 'next/cache';
 import { getDayOfWeek } from '@/app/lib/utils';
+
+const pool = new Pool({
+    user: 'postgres',
+    host: 'db',
+    database: 'easy_meal',
+    password: 'postgres',
+    port: 5432,
+});
+
+export async function fetchRestaurants() {
+    noStore();
+    try {
+        const res = await pool.query('SELECT * FROM restaurants');
+        return res.rows;
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+}
 
 export default function getRestaurants(): Restaurant[] {
     return [
@@ -126,7 +147,7 @@ export function getFilteredRestaurants(query: { date: string | null; nameRestaur
                 return false;
             }
         }
-        if(query.nameRestaurant && !restaurant.name.includes(query.nameRestaurant)) {
+        if (query.nameRestaurant && !restaurant.name.includes(query.nameRestaurant)) {
             return false;
         }
         if (query.city && restaurant.city !== query.city) {
