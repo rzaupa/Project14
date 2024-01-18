@@ -12,10 +12,31 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: node-server
+    depends_on:
+      - db
     ports:
       - "3000:3000"
     environment:
       NODE_ENV: development
+
+  db:
+    image: postgres
+    container_name: postgres-server
+    restart: always
+    user: postgres
+    volumes:
+      - ./sql/easy_meal.sql:/docker-entrypoint-initdb.d/easy_meal.sql
+    environment:
+      POSTGRES_DB: easy_meal
+      POSTGRES_PASSWORD: root
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5432
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
@@ -26,27 +47,3 @@ services:
 #     depends_on:
 #       db:
 #         condition: service_healthy
-#   db:
-#     image: postgres
-#     restart: always
-#     user: postgres
-#     secrets:
-#       - db-password
-#     volumes:
-#       - db-data:/var/lib/postgresql/data
-#     environment:
-#       - POSTGRES_DB=example
-#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#     expose:
-#       - 5432
-#     healthcheck:
-#       test: [ "CMD", "pg_isready" ]
-#       interval: 10s
-#       timeout: 5s
-#       retries: 5
-# volumes:
-#   db-data:
-# secrets:
-#   db-password:
-#     file: db/password.txt
-
