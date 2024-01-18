@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { getCities, getCuisines } from '@/app/lib/data';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { set } from 'firebase/database';
 
 export default function Search() {
     const searchParams = useSearchParams();
