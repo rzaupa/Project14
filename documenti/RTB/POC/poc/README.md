@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Docker
+
+Costruisci l'immagine docker:
+```bash
+docker build -t nome_immagine .
+```
+
+Esegui il container:
+```bash
+docker run -p 3000:3000 nome_immagine
+```
+
 ## Getting Started
 
 First, run the development server:
