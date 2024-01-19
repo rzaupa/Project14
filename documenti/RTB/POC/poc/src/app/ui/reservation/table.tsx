@@ -1,4 +1,5 @@
-import { fetchRestaurants, getFilteredRestaurants } from '@/app/lib/data';
+import { getFilteredRestaurants } from '@/app/lib/data';
+import { fetchRestaurants } from '@/app/lib/actions';
 import { useSearchParams } from 'next/navigation';
 
 

@@ -1,4 +1,3 @@
-import { Pool } from 'pg';
 import {
     Restaurant,
     Menu,
@@ -8,14 +7,7 @@ import {
 import { unstable_noStore as noStore } from 'next/cache';
 import { getDayOfWeek } from '@/app/lib/utils';
 
-const pool = new Pool({
-    user: 'postgres',
-    host: 'db',
-    database: 'easy_meal',
-    password: 'postgres',
-    port: 5432,
-});
-
+/*
 export async function fetchRestaurants() {
     noStore();
     try {
@@ -25,7 +17,7 @@ export async function fetchRestaurants() {
         console.error(err);
         return [];
     }
-}
+}*/
 
 export default function getRestaurants(): Restaurant[] {
     return [
