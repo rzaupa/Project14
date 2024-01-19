@@ -2,12 +2,14 @@
 import React, { useState } from 'react';
 import { getCities, getCuisines } from '@/app/lib/data';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function Search() {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
-    function handleSearch(nameRestaurant: string, date: string, city: string, cuisine: string) {
+    const handleSearch = useDebouncedCallback((nameRestaurant: string, date: string, city: string, cuisine: string) => {
+        console.log('searching...', nameRestaurant, date, city, cuisine);
         const params = new URLSearchParams(searchParams);
         if (date) {
             params.set('date', date);
@@ -31,7 +33,7 @@ export default function Search() {
             params.delete('cuisine');
         }
         replace(`${pathname}?${params.toString()}`);
-    }
+    }, 300);
     const [date, setDate] = useState('');
     const [nameRestaurant, setNameRestaurant] = useState('');
     const [city, setCity] = useState('');
@@ -44,6 +46,8 @@ export default function Search() {
         <div className="mb-4">
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
                 <input
+                    type="text"
+                    value={nameRestaurant}
                     className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                     placeholder={'Nome ristorante'}
                     onChange={(e) => {
@@ -59,6 +63,7 @@ export default function Search() {
                         handleSearch(nameRestaurant, e.target.value, city, cuisine);
                     }}
                     className="border border-gray-300 p-2 w-full mb-2"
+                    min={new Date().toISOString().split('T')[0]} 
                 />
                 <input
                     type="text"

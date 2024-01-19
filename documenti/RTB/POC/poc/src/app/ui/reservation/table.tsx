@@ -1,3 +1,4 @@
+'use client';
 import { getFilteredRestaurants } from '@/app/lib/data';
 import { useSearchParams } from 'next/navigation';
 
@@ -11,24 +12,31 @@ export default function RestaurantsTable() {
     const parms = { date, nameRestaurant, city, cuisine };
     const restaurants = getFilteredRestaurants(parms);
 
+    if (restaurants.length === 0) {
+        return (
+            <div>
+                <p>Nessun ristorante trovato</p>
+            </div>
+        );
+    }
     return (
         <div>
-            <table>
-                <thead>
+            <table className="min-w-full divide-y divide-gray-200 table-auto">
+                <thead className="bg-gray-50">
                     <tr>
-                        <th>Nome</th>
-                        <th>Indirizzo</th>
-                        <th>Città</th>
-                        <th>Cucina</th>
+                        <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                        <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Indirizzo</th>
+                        <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Città</th>
+                        <th className="px-2 py-1 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cucina</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-white divide-y divide-gray-200">
                     {restaurants.map((restaurant) => (
                         <tr key={restaurant.id}>
-                            <td>{restaurant.name}</td>
-                            <td>{restaurant.address}</td>
-                            <td>{restaurant.city}</td>
-                            <td>{restaurant.cuisine}</td>
+                            <td className="px-2 py-1 whitespace-nowrap">{restaurant.name}</td>
+                            <td className="px-2 py-1 whitespace-nowrap">{restaurant.address}</td>
+                            <td className="px-2 py-1 whitespace-nowrap">{restaurant.city}</td>
+                            <td className="px-2 py-1 whitespace-nowrap">{restaurant.cuisine}</td>
                         </tr>
                     ))}
                 </tbody>
