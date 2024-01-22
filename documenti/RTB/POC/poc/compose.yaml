@@ -21,22 +21,23 @@ services:
       NODE_ENV: development
 
   db:
-    image: postgres
-    container_name: postgres-server
-    restart: always
+    image: mysql:latest
+    container_name: mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: easymeal
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    command: --init-file /docker-entrypoint-initdb.d/easy_meal.sql
     volumes:
       - ./sql/easy_meal.sql:/docker-entrypoint-initdb.d/easy_meal.sql
-    environment:
-      POSTGRES_DB: easy_meal
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
     healthcheck:
-      test: [ "CMD", "pg_isready" ]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 3
     ports:
-      - "5432:5432"
+      - "3306:3306"
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
