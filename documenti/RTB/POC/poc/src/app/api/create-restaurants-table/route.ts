@@ -1,4 +1,4 @@
-/*import { sql } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
  
 export async function GET(request: Request) {
@@ -9,4 +9,4 @@ export async function GET(request: Request) {
     } catch (error) {
         return NextResponse.json({ error }, { status: 500 });
     }
-}*/
+}
